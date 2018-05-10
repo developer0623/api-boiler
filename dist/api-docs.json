@@ -1,0 +1,2186 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Article API",
+    "description": "Article API to manage Admin users, Tenants, Articles, Tags and References.",
+    "termsOfService": "http://swagger.io/terms/"
+  },
+  "basePath": "/api/",
+  "tags" : [
+    {
+      "name": "Admin User", 
+      "description": "API for CRUD Admin Users"
+    },
+    {
+      "name": "Tenant", 
+      "description": "API for CRUD Tenants"
+    },
+    {
+      "name": "Tag", 
+      "description": "API for CRUD Tags"
+    },
+    {
+      "name": "Article", 
+      "description": "API for CRUD Articles"
+    },
+    {
+      "name": "Category", 
+      "description": "API for CRUD Category"
+    },
+    {
+      "name": "Language", 
+      "description": "API for CRUD Language"
+    },
+    {
+      "name": "Jurisdiction", 
+      "description": "API for CRUD Jurisdiction"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/admin-users/login": {
+      "post": {
+        "tags": ["Admin User"],
+        "description": "Login for Admin User",
+        "operationId": "loginAdminUser",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Login Parameters",
+            "in": "body",
+            "description": "Login Admin User",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LoginUser"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with token",
+            "schema": {
+               "$ref": "#/definitions/LoginResponse"
+            }
+          },
+          "405": {
+            "description": "Missing Parameter",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "404": {
+            "description": "Invalid Credential",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/admin-users": {
+      "post": {
+        "tags": ["Admin User"],
+        "description": "Create new Admin User",
+        "operationId": "createAdminUser",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Admin User Parameters",
+            "in": "body",
+            "description": "Create new Admin User",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Success message",
+            "schema": {
+              "type": "Response with Success message"
+            }
+          },
+          "405": {
+            "description": "Missing Parameter",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "403": {
+            "description": "Admin User Login Duplication",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },      
+      "get": {
+        "tags": ["Admin User"],
+        "description": "Get Admin User List",
+        "operationId": "getAdminUsers",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "description": "Get Admin User List",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Admin User List",
+            "schema": {
+              "$ref": "#/definitions/GetUser"
+            }
+          },
+          "403": {
+            "description": "Admin User Login Duplication",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/admin-users/{login}": {
+      "patch": {
+        "tags": ["Admin User"],
+        "description": "Update Admin User",
+        "operationId": "updateAdminUser",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Admin User Parameters",
+            "in": "body",
+            "description": "Update Admin User",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateUser"
+            }
+          },
+          {
+            "name": "login",
+            "in": "path",
+            "description": "Login",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Success message",
+            "schema": {
+              "type": "Response with Success message"
+            }
+          },
+          "405": {
+            "description": "Missing Parameter",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "404": {
+            "description": "Invalid login",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Admin User"],
+        "description": "Delete Admin User",
+        "operationId": "deleteAdminUser",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "description": "Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "login",
+            "in": "path",
+            "description": "Login",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Success message",
+            "schema": {
+              "type": "Response with Success message"
+            }
+          },
+          "404": {
+            "description": "Invalid login",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/admin-users/{login}/change-password": {
+      "post": {
+        "tags": ["Admin User"],
+        "description": "Change password of Admin User",
+        "operationId": "changePasswordAdminUser",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Change Password Parameter",
+            "in": "body",
+            "description": "Update Admin User",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateUserPassword"
+            }
+          },
+          {
+            "name": "login",
+            "in": "path",
+            "description": "Login",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Success message",
+            "schema": {
+              "type": "Response with Success message"
+            }
+          },
+          "405": {
+            "description": "Missing Parameter",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "404": {
+            "description": "Old password is wrong",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "403": {
+            "description": "Wrong Login",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/tenants/login": {
+      "post": {
+        "tags": ["Tenant"],
+        "description": "Login for Tenant",
+        "operationId": "loginTenant",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Login Parameters",
+            "in": "body",
+            "description": "Login Tenant",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LoginUser"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with token",
+            "schema": {
+               "$ref": "#/definitions/LoginResponse"
+            }
+          },
+          "405": {
+            "description": "Missing Parameter",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "404": {
+            "description": "Invalid Credential",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/tenants": {
+      "post": {
+        "tags": ["Tenant"],
+        "description": "Create new Tenant",
+        "operationId": "createTenant",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Tenant Parameters",
+            "in": "body",
+            "description": "Create new Tenant",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Success message",
+            "schema": {
+              "type": "Response with Success message"
+            }
+          },
+          "405": {
+            "description": "Missing Parameter",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "403": {
+            "description": "Tenant Login Duplication",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },      
+      "get": {
+        "tags": ["Tenant"],
+        "description": "Get Tenant List",
+        "operationId": "getTenants",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "description": "Get Tenant List",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Tenant List",
+            "schema": {
+              "$ref": "#/definitions/GetUser"
+            }
+          },
+          "403": {
+            "description": "Tenant Login Duplication",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/tenants/{login}": {
+      "patch": {
+        "tags": ["Tenant"],
+        "description": "Update Tenant",
+        "operationId": "updateTenant",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Tenant Parameters",
+            "in": "body",
+            "description": "Update Tenant",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateUser"
+            }
+          },
+          {
+            "name": "login",
+            "in": "path",
+            "description": "Login",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Success message",
+            "schema": {
+              "type": "Response with Success message"
+            }
+          },
+          "405": {
+            "description": "Missing Parameter",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "404": {
+            "description": "Invalid login",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Tenant"],
+        "description": "Delete Tenant",
+        "operationId": "deleteTenant",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "description": "Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "login",
+            "in": "path",
+            "description": "Login",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Success message",
+            "schema": {
+              "type": "Response with Success message"
+            }
+          },
+          "404": {
+            "description": "Invalid login",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/tenants/{login}/change-password": {
+      "post": {
+        "tags": ["Tenant"],
+        "description": "Change password of Tenant",
+        "operationId": "changePasswordTenant",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Change Password Parameter",
+            "in": "body",
+            "description": "Update Tenant",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateUserPassword"
+            }
+          },
+          {
+            "name": "login",
+            "in": "path",
+            "description": "Login",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Success message",
+            "schema": {
+              "type": "Response with Success message"
+            }
+          },
+          "405": {
+            "description": "Missing Parameter",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "404": {
+            "description": "Old password is wrong",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "403": {
+            "description": "Wrong Login",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/tenants/accesskey": {
+      "get": {
+        "tags": ["Tenant"],
+        "description": "Get Access Key of Tenant",
+        "operationId": "getAccessKey",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "description": "Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Access Key",
+            "schema": {
+              "$ref": "#/definitions/TenantAccessKey"
+            }
+          },
+          "404": {
+            "description": "Invalid login",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/tags": {
+      "post": {
+        "tags": ["Tag"],
+        "description": "Create new Tag",
+        "operationId": "createTag",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Tag Parameters",
+            "in": "body",
+            "description": "Create new tag",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Tag"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Success message",
+            "schema": {
+              "type": "Response with Success message"
+            }
+          },
+          "405": {
+            "description": "Missing Parameter",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "403": {
+            "description": "Tag Duplication",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },      
+      "get": {
+        "tags": ["Tag"],
+        "description": "Get Tag List",
+        "operationId": "getTags",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "description": "Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Tag List",
+            "schema": {
+              "$ref": "#/definitions/GetTag"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/tags/{_id}": {
+      "patch": {
+        "tags": ["Tag"],
+        "description": "Update Tag",
+        "operationId": "updateTag",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Tag Parameters",
+            "in": "body",
+            "description": "Update Tag",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateTag"
+            }
+          },
+          {
+            "name": "_id",
+            "in": "path",
+            "description": "Tag Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Success message",
+            "schema": {
+              "type": "Response with Success message"
+            }
+          },
+          "405": {
+            "description": "Missing Parameter",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "404": {
+            "description": "Invalid Tag Id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Tag"],
+        "description": "Delete Tag",
+        "operationId": "deleteTag",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "description": "Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "_id",
+            "in": "path",
+            "description": "_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Success message",
+            "schema": {
+              "type": "Response with Success message"
+            }
+          },
+          "404": {
+            "description": "Invalid Tag Id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/categories": {
+      "post": {
+        "tags": ["Category"],
+        "description": "Create new Category",
+        "operationId": "createCategory",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Category Parameters",
+            "in": "body",
+            "description": "Create new category",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Category"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Success message",
+            "schema": {
+              "type": "Response with Success message"
+            }
+          },
+          "405": {
+            "description": "Missing Parameter",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "403": {
+            "description": "Category Duplication",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },      
+      "get": {
+        "tags": ["Category"],
+        "description": "Get Category List",
+        "operationId": "getCategories",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "description": "Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Category List",
+            "schema": {
+              "$ref": "#/definitions/GetCategory"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/categories/{_id}": {
+      "patch": {
+        "tags": ["Category"],
+        "description": "Update Category",
+        "operationId": "updateCategory",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Category Parameters",
+            "in": "body",
+            "description": "Update Category",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateCategory"
+            }
+          },
+          {
+            "name": "_id",
+            "in": "path",
+            "description": "Category Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Success message",
+            "schema": {
+              "type": "Response with Success message"
+            }
+          },
+          "405": {
+            "description": "Missing Parameter",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "404": {
+            "description": "Invalid Category Id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Category"],
+        "description": "Delete Category",
+        "operationId": "deleteCategory",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "description": "Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "_id",
+            "in": "path",
+            "description": "_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Success message",
+            "schema": {
+              "type": "Response with Success message"
+            }
+          },
+          "404": {
+            "description": "Invalid Category Id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/languages": {
+      "post": {
+        "tags": ["Language"],
+        "description": "Create new Language",
+        "operationId": "createLanguage",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Language Parameters",
+            "in": "body",
+            "description": "Create new language",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Language"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Success message",
+            "schema": {
+              "type": "Response with Success message"
+            }
+          },
+          "405": {
+            "description": "Missing Parameter",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "403": {
+            "description": "Language Duplication",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },      
+      "get": {
+        "tags": ["Language"],
+        "description": "Get Language List",
+        "operationId": "getLanguages",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "description": "Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Language List",
+            "schema": {
+              "$ref": "#/definitions/GetLanguage"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/languages/{_id}": {
+      "patch": {
+        "tags": ["Language"],
+        "description": "Update Language",
+        "operationId": "updateLanguage",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Language Parameters",
+            "in": "body",
+            "description": "Update Language",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateLanguage"
+            }
+          },
+          {
+            "name": "_id",
+            "in": "path",
+            "description": "Language Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Success message",
+            "schema": {
+              "type": "Response with Success message"
+            }
+          },
+          "405": {
+            "description": "Missing Parameter",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "404": {
+            "description": "Invalid Language Id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Language"],
+        "description": "Delete Language",
+        "operationId": "deleteLanguage",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "description": "Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "_id",
+            "in": "path",
+            "description": "_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Success message",
+            "schema": {
+              "type": "Response with Success message"
+            }
+          },
+          "404": {
+            "description": "Invalid Language Id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/jurisdictions": {
+      "post": {
+        "tags": ["Jurisdiction"],
+        "description": "Create new Jurisdiction",
+        "operationId": "createJurisdiction",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Jurisdiction Parameters",
+            "in": "body",
+            "description": "Create new jurisdiction",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Jurisdiction"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Success message",
+            "schema": {
+              "type": "Response with Success message"
+            }
+          },
+          "405": {
+            "description": "Missing Parameter",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "403": {
+            "description": "Jurisdiction Duplication",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },      
+      "get": {
+        "tags": ["Jurisdiction"],
+        "description": "Get Jurisdiction List",
+        "operationId": "getJurisdictions",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "description": "Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Jurisdiction List",
+            "schema": {
+              "$ref": "#/definitions/GetJurisdiction"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/jurisdictions/{_id}": {
+      "patch": {
+        "tags": ["Jurisdiction"],
+        "description": "Update Jurisdiction",
+        "operationId": "updateJurisdiction",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Jurisdiction Parameters",
+            "in": "body",
+            "description": "Update Jurisdiction",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateJurisdiction"
+            }
+          },
+          {
+            "name": "_id",
+            "in": "path",
+            "description": "Jurisdiction Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Success message",
+            "schema": {
+              "type": "Response with Success message"
+            }
+          },
+          "405": {
+            "description": "Missing Parameter",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "404": {
+            "description": "Invalid Jurisdiction Id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Jurisdiction"],
+        "description": "Delete Jurisdiction",
+        "operationId": "deleteJurisdiction",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "description": "Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "_id",
+            "in": "path",
+            "description": "_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Success message",
+            "schema": {
+              "type": "Response with Success message"
+            }
+          },
+          "404": {
+            "description": "Invalid Jurisdiction Id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/articles": {
+      "post": {
+        "tags": ["Article"],
+        "description": "Create new Article",
+        "operationId": "createArticle",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Article Parameters",
+            "in": "body",
+            "description": "Create new Article",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Article"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Success message",
+            "schema": {
+              "type": "Response with Success message"
+            }
+          },
+          "405": {
+            "description": "Missing Parameter",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "403": {
+            "description": "Invalid Parameter",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },      
+      "get": {
+        "tags": ["Article"],
+        "description": "Get Article List",
+        "operationId": "getArticles",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "description": "Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Article List",
+            "schema": {
+              "$ref": "#/definitions/GetArticle"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/articles/{_id}": {
+      "patch": {
+        "tags": ["Article"],
+        "description": "Update Article",
+        "operationId": "updateArticle",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Article Parameters",
+            "in": "body",
+            "description": "Update Article",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateArticle"
+            }
+          },
+          {
+            "name": "_id",
+            "in": "path",
+            "description": "Article Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Success message",
+            "schema": {
+              "type": "Response with Success message"
+            }
+          },
+          "405": {
+            "description": "Missing Parameter",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "404": {
+            "description": "Invalid Article Id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Article"],
+        "description": "Delete Article",
+        "operationId": "deleteArticle",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "description": "Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "_id",
+            "in": "path",
+            "description": "_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Success message",
+            "schema": {
+              "type": "Response with Success message"
+            }
+          },
+          "404": {
+            "description": "Invalid Article Id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/articles/{_id}/{access_key}": {
+      "get": {
+        "tags": ["Article"],
+        "description": "Get Article by Article Id",
+        "operationId": "getArticlebyArticleId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "description": "Article Id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "access_key",
+            "in": "path",
+            "description": "Access Key",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Article Detail",
+            "schema": {
+              "$ref": "#/definitions/Article"
+            }
+          },
+          "403": {
+            "description": "Invalid Access Key",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "404": {
+            "description": "Invalid Article Id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/articles/{access_key}": {
+      "get": {
+        "tags": ["Article"],
+        "description": "Get Article by Filter",
+        "operationId": "getArticleIdsByFilter",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Status",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "reference",
+            "in": "query",
+            "description": "Reference",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tags",
+            "in": "query",
+            "description": "Tag List",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "access_key",
+            "in": "path",
+            "description": "Access Key",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Success message",
+            "schema": {
+              "type": "Response with Success message"
+            }
+          },
+          "405": {
+            "description": "Missing Parameter",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/references/{access_key}": {
+      
+      "patch": {
+        "tags": ["Reference"],
+        "description": "Update Status",
+        "operationId": "updateStatus",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "access_key",
+            "in": "path",
+            "description": "Access Key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "parameter",
+            "in": "body",
+            "description": "parameter",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Reference"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Success message",
+            "schema": {
+              "type": "Response with Success message"
+            }
+          },
+          "405": {
+            "description": "Missing Parameter",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "403": {
+            "description": "Invalid Parameter",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions": {
+      "patch": {
+        "tags": ["Subscription"],
+        "description": "Update Subcription",
+        "operationId": "updateSubscription",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "parameter",
+            "in": "body",
+            "description": "parameter",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Subscription"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Success message",
+            "schema": {
+              "type": "Response with Success message"
+            }
+          },
+          "405": {
+            "description": "Missing Parameter",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{articleId}": {
+      "get": {
+        "tags": ["Subscription"],
+        "description": "Get Subcription",
+        "operationId": "getSubscription",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "description": "Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "articleId",
+            "in": "path",
+            "description": "Article Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response with Success message",
+            "schema": {
+              "$ref": "#/definitions/GetSubscription"
+            }
+          },
+          "405": {
+            "description": "Missing Parameter",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Authentication Failed",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "LoginUser": {
+      "properties": {
+        "login": {
+          "required":true,
+          "type": "string",
+          "example": "admin"
+        },
+        "password": {
+          "required":true,
+          "type":"string",
+          "example": "admin"
+        } 
+      }
+    },
+    "UpdateUserPassword": {
+      "properties": {
+        "oldPassword": {
+          "required":true,
+          "type": "string",
+          "example": "Old Password"
+        },
+        "newPassword": {
+          "required":true,
+          "type": "string",
+          "example": "New Password"
+        },
+        "token": {
+          "required":true,
+          "type": "string",
+          "example": "Token"
+        }
+      }
+    },
+    "UpdateUser": {
+      "properties": {
+        "name": {
+          "required":true,
+          "type": "string",
+          "example": "Erik Clasie"
+        },
+        "token": {
+          "required":true,
+          "type": "string",
+          "example": "Token"
+        }
+      }
+    },
+    "GetUser": {
+      "properties": {
+        "name": {
+          "required":true,
+          "type": "string",
+          "example": "Erik Clasie"
+        },
+        "login": {
+          "required":true,
+          "type": "string",
+          "example": "login"
+        }
+      }
+    },
+    "LoginResponse": {
+      "properties": {
+        "token": {
+          "required":true,
+          "type": "string",
+          "example": "Token"
+        }
+      }
+    },
+    "User": {
+      "properties": {
+        "name": {
+          "required":true,
+          "type": "string",
+          "example": "Erik Clasie"
+        },
+        "login": {
+          "required":true,
+          "type": "string",
+          "example": "erik"
+        },
+        "password": {
+          "required":true,
+          "type":"string",
+          "example": "password"
+        },
+        "token": {
+          "required":true,
+          "type":"string",
+          "example": "Token"
+        } 
+      }
+    },
+    "TenantAccessKey": {
+      "properties": {
+        "access_key": {
+          "required":true,
+          "type": "string",
+          "example": "Access Key"
+        }
+      }
+    },
+    "UpdateTag": {
+      "properties": {
+        "tag": {
+          "required":true,
+          "type": "string",
+          "example": "Tag"
+        },
+        "token": {
+          "required":true,
+          "type": "string",
+          "example": "Token"
+        }
+      }
+    },
+    "GetTag": {
+      "properties": {
+        "tag": {
+          "required":true,
+          "type": "string",
+          "example": "Tag"
+        }
+      }
+    },
+    "Tag": {
+      "properties": {
+        "tag": {
+          "required":true,
+          "type": "string",
+          "example": "Tag"
+        },
+        "token": {
+          "required":true,
+          "type":"string",
+          "example": "Token"
+        } 
+      }
+    },
+    "UpdateLanguage": {
+      "properties": {
+        "language": {
+          "required":true,
+          "type": "string",
+          "example": "language"
+        },
+        "token": {
+          "required":true,
+          "type": "string",
+          "example": "Token"
+        }
+      }
+    },
+    "GetLanguage": {
+      "properties": {
+        "language": {
+          "required":true,
+          "type": "string",
+          "example": "language"
+        }
+      }
+    },
+    "Language": {
+      "properties": {
+        "language": {
+          "required":true,
+          "type": "string",
+          "example": "language"
+        },
+        "token": {
+          "required":true,
+          "type":"string",
+          "example": "Token"
+        } 
+      }
+    },
+    "UpdateJurisdiction": {
+      "properties": {
+        "jurisdiction": {
+          "required":true,
+          "type": "string",
+          "example": "jurisdiction"
+        },
+        "token": {
+          "required":true,
+          "type": "string",
+          "example": "Token"
+        }
+      }
+    },
+    "GetJurisdiction": {
+      "properties": {
+        "jurisdiction": {
+          "required":true,
+          "type": "string",
+          "example": "jurisdiction"
+        }
+      }
+    },
+    "Jurisdiction": {
+      "properties": {
+        "jurisdiction": {
+          "required":true,
+          "type": "string",
+          "example": "jurisdiction"
+        },
+        "token": {
+          "required":true,
+          "type":"string",
+          "example": "Token"
+        } 
+      }
+    },
+    "UpdateCategory": {
+      "properties": {
+        "category": {
+          "required":true,
+          "type": "string",
+          "example": "category"
+        },
+        "token": {
+          "required":true,
+          "type": "string",
+          "example": "Token"
+        }
+      }
+    },
+    "GetCategory": {
+      "properties": {
+        "category": {
+          "required":true,
+          "type": "string",
+          "example": "category"
+        }
+      }
+    },
+    "Category": {
+      "properties": {
+        "category": {
+          "required":true,
+          "type": "string",
+          "example": "category"
+        },
+        "token": {
+          "required":true,
+          "type":"string",
+          "example": "Token"
+        } 
+      }
+    },
+    "UpdateArticle": {
+      "properties": {
+        "title": {
+          "required":true,
+          "type": "string",
+          "example": "Title"
+        },
+        "description": {
+          "required":true,
+          "type": "string",
+          "example": "Description"
+        },
+        "type": {
+          "required":true,
+          "type": "string",
+          "example": "Type"
+        },
+        "image": {
+          "required":true,
+          "type": "string",
+          "example": "Image"
+        },
+        "start_date": {
+          "required":true,
+          "type": "string",
+          "example": "2012/4/4"
+        },
+        "expiry_date": {
+          "required":true,
+          "type": "string",
+          "example": "2016/5/5"
+        },
+        "token": {
+          "required":true,
+          "type": "string",
+          "example": "Token"
+        }
+      }
+    },
+    "GetArticle": {
+      "properties": {
+        "title": {
+          "required":true,
+          "type": "string",
+          "example": "Title"
+        },
+        "description": {
+          "required":true,
+          "type": "string",
+          "example": "Description"
+        },
+        "image": {
+          "required":true,
+          "type": "string",
+          "example": "Image"
+        },
+        "type": {
+          "required":true,
+          "type": "string",
+          "example": "Type"
+        },
+        "start_date": {
+          "required":true,
+          "type": "string",
+          "example": "2012/4/4"
+        },
+        "expiry_date": {
+          "required":true,
+          "type": "string",
+          "example": "2016/5/5"
+        }
+      }
+    },
+    "Article": {
+      "properties": {
+        "title": {
+          "required":true,
+          "type": "string",
+          "example": "Title"
+        },
+        "description": {
+          "required":true,
+          "type": "string",
+          "example": "Description"
+        },
+        "type": {
+          "required":true,
+          "type": "string",
+          "example": "Type"
+        },
+        "image": {
+          "required":true,
+          "type": "string",
+          "example": "Image"
+        },
+        "start_date": {
+          "required":true,
+          "type": "string",
+          "example": "2012/4/4"
+        },
+        "expiry_date": {
+          "required":true,
+          "type": "string",
+          "example": "2016/5/5"
+        },
+        "token": {
+          "required":true,
+          "type":"string",
+          "example": "Token"
+        } 
+      }
+    },
+    "Reference": {
+      "properties": {
+        "status": {
+          "required":true,
+          "type": "string",
+          "example": "Status"
+        },
+        "reference": {
+          "required":true,
+          "type": "string",
+          "example": "Reference"
+        },
+        "articleId": {
+          "required":true,
+          "type": "string",
+          "example": "ArticleId"
+        }
+      }
+    },
+    "Subscription": {
+      "properties": {
+        "articleId": {
+          "required":true,
+          "type": "string",
+          "example": "Article Id"
+        },
+        "subscription": {
+          "required":true,
+          "type": "boolean",
+          "example": true
+        },
+        "token": {
+          "required":true,
+          "type": "string",
+          "example": "Token"
+        }
+      }
+    },
+    "GetSubscription": {
+      "properties": {
+        "result": {
+          "required":true,
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,124 @@
+1. Admin User
+
+	- Login
+
+		URL: https://enigmatic-waters-34902.herokuapp.com/api/admin-users/login
+		METHOD: POST
+		REQUEST PARAMETER: {
+			login: String,
+			password: String
+		}
+		RESPONSE PARAMETER: {
+			token: String
+		}
+
+	- Create Admin User
+		
+		URL: https://enigmatic-waters-34902.herokuapp.com/api/admin-users
+		METHOD: POST
+		REQUEST PARAMETER: {
+			name: String,
+			login: String,
+			password: String,
+			token: String
+		}
+		RESPONSE PARAMETER: {
+			message: Success Message
+		}
+
+	- Update Admin User
+		
+		URL: https://enigmatic-waters-34902.herokuapp.com/api/admin-users/{login}
+		METHOD: PUT
+		REQUEST PARAMETER: {
+			name: String,
+			token: String
+		}
+		RESPONSE PARAMETER: {
+			message: Success Message
+		}
+
+	- Delete Admin User
+		
+		URL: https://enigmatic-waters-34902.herokuapp.com/api/admin-users/{login}
+		METHOD: DELETE
+		REQUEST PARAMETER: {
+			token: String
+		}
+		RESPONSE PARAMETER: {
+			message: Success Message
+		}
+
+	- Get Admin User List
+		
+		URL: https://enigmatic-waters-34902.herokuapp.com/api/admin-users
+		METHOD: GET
+		REQUEST PARAMETER: {
+			token: String
+		}
+		RESPONSE PARAMETER: {
+			[Admin User List]
+		}
+
+
+2. Tenant
+
+	- Login
+
+		URL: https://enigmatic-waters-34902.herokuapp.com/api/tenants/login
+		METHOD: POST
+		REQUEST PARAMETER: {
+			login: String,
+			password: String
+		}
+		RESPONSE PARAMETER: {
+			token: String
+		}
+
+	- Create Tenant
+		
+		URL: https://enigmatic-waters-34902.herokuapp.com/api/tenants
+		METHOD: POST
+		REQUEST PARAMETER: {
+			name: String,
+			login: String,
+			password: String,
+			token: String
+		}
+		RESPONSE PARAMETER: {
+			message: Success Message
+		}
+
+	- Update Tenant
+		
+		URL: https://enigmatic-waters-34902.herokuapp.com/api/tenants/{login}
+		METHOD: PUT
+		REQUEST PARAMETER: {
+			name: String,
+			token: String
+		}
+		RESPONSE PARAMETER: {
+			message: Success Message
+		}
+
+	- Delete Tenant
+		
+		URL: https://enigmatic-waters-34902.herokuapp.com/api/tenants/{login}
+		METHOD: DELETE
+		REQUEST PARAMETER: {
+			token: String
+		}
+		RESPONSE PARAMETER: {
+			message: Success Message
+		}
+
+	- Get Tenant List
+		
+		URL: https://enigmatic-waters-34902.herokuapp.com/api/tenants
+		METHOD: GET
+		REQUEST PARAMETER: {
+			token: String
+		}
+		RESPONSE PARAMETER: {
+			[Admin User List]
+		}
