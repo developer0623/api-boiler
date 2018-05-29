@@ -1,0 +1,16 @@
+@import '../../assets/moon-lite-components/styles/variables';
+
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  div {
+    font-family: "proxima_novamedium", Arial, sans-serif;
+    line-height: 1;
+    letter-spacing: 0.8px;
+    color: $golden-color;
+    padding-left: 4px;
+  }  
+}

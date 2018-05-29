@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 30 Copy 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="30" height="30"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-30-Copy-2">
+            <g id="Path-2">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#95DABE" xlink:href="#path-1"></use>
+                <polygon fill="#79D2B0" mask="url(#mask-2)" transform="translate(14.818844, 14.963627) rotate(-270.000000) translate(-14.818844, -14.963627) " points="-0.113044379 9.59692383 29.7507324 29.869392 29.7507324 0.0578613281 -0.113044379 0.0578613281"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

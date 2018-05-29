@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>refresh-69</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Element/Card/Train-Susan" transform="translate(-43.000000, -309.000000)" stroke="#F8E71C">
+            <g id="refresh-69" transform="translate(44.000000, 310.000000)">
+                <g id="Group">
+                    <path d="M0.140350877,8 C0.140350877,3.65922807 3.65922807,0.140350877 8,0.140350877 C11.1677193,0.140350877 13.9309474,2.09740351 15.1750175,4.79719298" id="Shape"></path>
+                    <polyline id="Shape" points="15.7990175 0.140350877 15.1750175 4.79719298 10.5184561 4.17319298"></polyline>
+                </g>
+                <path d="M15.8596491,8 C15.8596491,12.3407719 12.3407719,15.8596491 8,15.8596491 C4.8322807,15.8596491 2.06905263,13.9025965 0.824982456,11.202807" id="Shape"></path>
+                <polyline id="Shape" points="0.200982456 15.8596491 0.824982456 11.202807 5.48154386 11.826807"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

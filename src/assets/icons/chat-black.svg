@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Element/Icon/chat - Black</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Element/Icon/chat---Black" stroke="#4A4A4A">
+            <g id="chat-33" transform="translate(3.000000, 3.000000)">
+                <path d="M6.5,0.5 C3.186,0.5 0.5,2.739 0.5,5.5 C0.5,6.521 0.869,7.47 1.5,8.262 L1.5,12 L4.073,10.07 C4.815,10.345 5.635,10.5 6.5,10.5 C9.814,10.5 12.5,8.261 12.5,5.5 C12.5,2.739 9.814,0.5 6.5,0.5 Z" id="Shape"></path>
+                <path d="M5.219,12.504 C6.308,13.427 7.824,14 9.5,14 C10.283,14 11.029,13.871 11.715,13.644 L14.5,15.5 L14.5,11.762 C15.131,10.97 15.5,10.022 15.5,9 C15.5,8.091 15.209,7.239 14.701,6.505" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Element/Icon/- black</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Element/Icon/--black" fill="#474747" fill-rule="nonzero">
+            <g id="circle-delete" transform="translate(4.000000, 11.000000)">
+                <path d="M13.5333333,1 L0.466666667,1 C0.186666667,1 0,0.8 0,0.5 C0,0.2 0.186666667,0 0.466666667,0 L13.5333333,0 C13.8133333,0 14,0.2 14,0.5 C14,0.8 13.8133333,1 13.5333333,1 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

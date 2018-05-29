@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Element/Icon/Warning - White</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Element/Icon/Warning---White">
+            <g id="alert" transform="translate(1.000000, 2.000000)">
+                <path d="M1.17403292,18.1481481 L18.8259671,18.1481481 L10,1.42317402 L1.17403292,18.1481481 Z" id="Shape" stroke="#FFFFFF"></path>
+                <path d="M10,8.38888889 L10,12.3188887" id="Shape" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <ellipse id="Oval" fill="#FFFFFF" fill-rule="nonzero" cx="10" cy="15.1296296" rx="1" ry="1"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>

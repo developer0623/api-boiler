@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Element/Icon/Calender-Gray</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Element/Icon/Calender-Gray" stroke="#9B9B9B">
+            <g id="calendar-grid-61-copy" transform="translate(2.000000, 2.000000)">
+                <polyline id="Shape" stroke-linecap="square" points="14.6 2 18 2 18 17 0 17 0 2 3.4 2"></polyline>
+                <path d="M6,2 L11,2" id="Shape" stroke-linecap="square"></path>
+                <rect id="Rectangle" x="2.5" y="7.5" width="1" height="1"></rect>
+                <rect id="Rectangle-Copy-4" x="2.5" y="11.5" width="1" height="1"></rect>
+                <rect id="Rectangle-Copy" x="6.5" y="7.5" width="1" height="1"></rect>
+                <rect id="Rectangle-Copy-5" x="6.5" y="11.5" width="1" height="1"></rect>
+                <rect id="Rectangle-Copy-2" x="10.5" y="7.5" width="1" height="1"></rect>
+                <rect id="Rectangle-Copy-6" x="10.5" y="11.5" width="1" height="1"></rect>
+                <rect id="Rectangle-Copy-3" x="14.5" y="7.5" width="1" height="1"></rect>
+                <rect id="Rectangle-Copy-7" x="14.5" y="11.5" width="1" height="1"></rect>
+                <rect id="Rectangle-path" stroke-linecap="square" x="4" y="0" width="2" height="4"></rect>
+                <rect id="Rectangle-path" stroke-linecap="square" x="12" y="0" width="2" height="4"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

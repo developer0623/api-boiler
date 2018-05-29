@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Element/Icon/Members Multiple - Black</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Element/Icon/Members-Multiple---Black" stroke="#4A4A4A" stroke-width="0.969999969">
+            <g id="Group-Copy" transform="translate(1.000000, 4.000000)">
+                <g id="multiple">
+                    <ellipse id="Oval" cx="10" cy="3.5" rx="2.85714286" ry="3"></ellipse>
+                    <ellipse id="Oval" cx="17.1428571" cy="4" rx="1.9047619" ry="2"></ellipse>
+                    <ellipse id="Oval-Copy" transform="translate(2.857143, 4.000000) scale(-1, 1) translate(-2.857143, -4.000000) " cx="2.85714286" cy="4" rx="1.9047619" ry="2"></ellipse>
+                    <path d="M10,8.5 C7.37007262,8.5 5.23809524,10.7385763 5.23809524,13.5 L14.7619048,13.5 C14.7619048,10.7385763 12.6299274,8.5 10,8.5 Z" id="Shape"></path>
+                    <path d="M15.2380952,7.50000404 C15.7061195,7.17302731 16.2559389,6.99903382 16.8180952,7.00000404 C18.3960517,7.00000404 19.6752381,8.34314979 19.6752381,10.000004 L19.6752381,11.000004 L16.8180952,11.000004" id="Shape"></path>
+                    <path d="M0,7.50000404 C0.468024219,7.17302731 1.01784365,6.99903382 1.58,7.00000404 C3.15795643,7.00000404 4.43714286,8.34314979 4.43714286,10.000004 L4.43714286,11.000004 L1.58,11.000004" id="Shape-Copy" transform="translate(2.218571, 9.000002) scale(-1, 1) translate(-2.218571, -9.000002) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

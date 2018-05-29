@@ -1,0 +1,4 @@
+<div class="train-rating">
+  <div class="train-rating__bar train-rating__bar--{{ i }}" *ngFor="let i of [1, 2, 3, 4, 5]; trackBy: trackByIndex;" [ngClass]="{'train-rating__bar--deactive': i > rate, 'bg_gray': state }">  	
+  </div>  
+</div>

@@ -1,0 +1,687 @@
+/* You can add global styles to this file, and also import other style files */
+$icon-font-path: '../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
+$fa-font-path: '../node_modules/font-awesome/fonts';
+
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "prismjs/themes/prism.css";
+
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import '../node_modules/font-awesome/scss/font-awesome';
+@import '../node_modules/quill/dist/quill.bubble.css';
+@import '../node_modules/quill/dist/quill.snow.css';
+@import 'mixins';
+@import 'variables';
+@import 'normalize';
+@import 'fonts';
+
+/******************************************************************/
+/* CSS Resets
+/******************************************************************/
+* {
+  box-sizing: border-box;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: $base-line-height;
+  color: $body-text-color;
+  height: $body-height;
+  font-size: $base-font-size;
+  font-family: "proxima_novaregular", Arial, sans-serif;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  outline: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+.body-content:before {
+  box-shadow: inset $body-box-negative-shadow-width 0 $body-box-shadow-width $body-box-negative-shadow-width rgba(0, 0, 0, 0.5);
+  content: "";
+  height: 100%;
+  left: $body-box-negative-shadow-width;
+  position: absolute;
+  top: 0;
+  width: $body-box-shadow-width;
+}
+
+.body-content:after {
+  box-shadow: inset $body-box-shadow-width 0 $body-box-shadow-width $body-box-negative-shadow-width rgba(0, 0, 0, 0.5);
+  content: "";
+  height: 100%;
+  position: absolute;
+  right: $body-box-negative-shadow-width;
+  width: $body-box-shadow-width;
+  top: 0;
+}
+
+.body-content {
+  background: none repeat scroll 0 0 $white;
+  padding: 0;
+  min-height: calc(1024px - #{$header-height} - #{$footer-height} - #{$base-top-bottom-spacing});
+  height: calc(100% - 76px);
+  max-width: $max-body-width;
+  position: relative;
+}
+
+.sidebar-content {
+  background-color: $body-content-background-color;
+}
+
+.no-gutters {
+  margin: 0;
+  padding: 0;
+}
+
+.component-body {
+  padding: $base-top-bottom-spacing $base-side-padding;
+}
+
+strong {
+  font-family: "proxima_novabold", Arial, sans-serif;
+  font-weight: normal;
+}
+
+/******************************************************************/
+/* Error Message Styles
+/******************************************************************/
+.ng-invalid:not(form).ng-touched  {
+  border-color: $psp-red;
+  border-width: 2px;
+}
+
+.error-message {
+  color: $psp-red;
+  font-family: "proxima_novamedium", Arial, sans-serif;
+  font-size: 10px;
+  line-height: 1.0;
+}
+
+/******************************************************************/
+/* Discover Pages Global Styles
+/******************************************************************/
+.handwriting-text {
+  font-family: 'caveat-regular', cursive;
+  color: $medium-gray;
+  font-size: 14px;
+  line-height: 16px;
+  min-height: 18px;
+}
+
+.arrow,
+.handwriting-text {
+  &.hide {
+    visibility: hidden;
+  }
+
+  &.show {
+    visibility: visible;
+  }
+}
+
+/******************************************************************/
+/* Sidebar Menu Override Styles
+/******************************************************************/
+.sidebar-content {
+  overflow-x: hidden;
+}
+
+.main-menu {
+  background-color: $white;
+  padding: 35px 5px 35px 15px;
+  width: 300px;
+
+  @media (min-width: 380px) {
+    padding: 35px 5px 35px 30px;
+    width: 350px;
+  }
+
+  &.ng-sidebar--opened.ng-sidebar--push,
+  &.ng-sidebar--opened.ng-sidebar--slide,
+  &.ng-sidebar--opened.ng-sidebar--over {
+    box-shadow: 0 0 2.5em rgba(85, 85, 85, 0.5);
+  }
+}
+
+/******************************************************************/
+/* Bootstrap Alert Styles
+/******************************************************************/
+.alert {
+  width: 80%;
+  margin: 10px auto;
+  padding-right: 25px;
+  font-family: "proxima_novabold";
+  font-size: 14px;
+  position: absolute;
+  z-index: 1;
+  left: 25%;
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+
+  &.alert-success {
+    color: $alert-success-text-color;
+    background-color: $alert-success-background-color;
+    border-color: $alert-success-border-color;
+  }
+
+  &.alert-info {
+    color: $alert-info-text-color;
+    background-color: $alert-info-background-color;
+    border-color: $alert-info-border-color;
+  }
+
+  &.alert-warning {
+    color: $alert-warning-text-color;
+    background-color: $alert-warning-background-color;
+    border-color: $alert-warning-border-color;
+  }
+
+  &.alert-error {
+    color: $alert-error-text-color;
+    background-color: $alert-error-background-color;
+    border-color: $alert-error-border-color;
+  }
+}
+
+.alert-dismissible .close {
+  padding: 0 5px;
+  margin-top: -4px;
+}
+
+/******************************************************************/
+/* Bootstrap Progress Bar Override Styles
+/******************************************************************/
+.progress {
+  height: 6px;
+  margin-top: 3px;
+  border-radius: 3px;
+}
+
+.progress-bar {
+  background-color: $lime-green;
+}
+
+/********************************************/
+/* Bootstrap Tab Overrides
+/********************************************/
+ul.nav-pills {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+ul.nav-pills li.nav-item {
+  text-align: center;
+  display: inline-block;
+}
+
+ul.nav-pills li.nav-item a.nav-link {
+  text-decoration: none;
+  padding: 0;
+}
+
+ul.nav-pills li.nav-item a.nav-link span {
+  font-size: 13px;
+  font-family: "proxima_novasemibold", Arial, sans-serif;
+  background-color: $extra-light-gray;
+  color: $very-dark-gray;
+  display: block;
+  padding: 10px 7px;
+  width: 100px;
+}
+
+ul.nav-pills li.nav-item a.nav-link.active span {
+  background-color: $very-dark-gray;
+  color: $white;
+}
+
+span.left-tab {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+span.right-tab {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/********************************************/
+/* Bootstrap Form Control Overrides         */
+/********************************************/
+.form-control {
+  font-family: "proxima_nova", Arial, sans-serif;
+  font-size: 14px;
+  color: $very-dark-gray;
+  line-height: 17px;
+  height: 42px;
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+/********************************************/
+/* Bootstrap Accordion Overrides         */
+/********************************************/
+.card, .card-header {
+  border: 0;
+  border-radius: 0;
+}
+.card-header, .card-header a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.card-header {
+  height: 80px;
+  background: $medium-gray;
+  padding: 0;
+  border-top: 1px solid $white;
+}
+.card-header a {
+  width: 100%;
+  text-decoration: none;
+  justify-content: space-between;
+  margin-left: 18px;
+  margin-right: 16px;
+}
+.card:nth-child(2n) .card-header:not(.active) {
+  background: $medium-very-light-gray;
+}
+.card-header.active .section-arrow {
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  padding-left: 20px;
+  background: url(assets/icons/up-arrow-white.svg) no-repeat;
+}
+.card .active{
+  background: $medium-blue;
+}
+.card-body {
+  padding: 0;
+}
+/********************************************/
+/* NgSelect Overrides         */
+/********************************************/
+.ng-select.ng-single .ng-control, .ng-input input, .ng-placeholder, .ng-value{
+  font-family: "proxima_novamedium", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 1px;
+  color: $white !important;
+}
+.ng-select .ng-select-container {
+  box-shadow: none !important;
+  height: 42px !important;
+  border: 0 !important;
+  background-color: $body-text-color !important;
+}
+.ng-select.opened {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.ng-select.focused .ng-control {
+  box-shadow: none !important;
+}
+.ng-select .ng-arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px !important;
+  height: 42px;
+  border-left: 1px solid $almost-black;
+  padding: 0 !important;
+}
+.ng-select .ng-arrow-wrapper .ng-arrow {
+  width: 22px !important;
+  height: 22px !important;
+  border-style: none !important;
+  background: url(assets/icons/dropdown-active-white.svg) no-repeat !important;
+}
+.ng-select.ng-select-opened .ng-arrow-wrapper .ng-arrow {
+  width: 22px !important;
+  height: 22px !important;
+  border-style: none !important;
+  background: url(assets/icons/up-arrow-white.svg) no-repeat !important;
+}
+.ng-option {
+  display: flex !important;
+  align-items: center !important;
+  height: 40px;
+  font-family: "proxima_novamedium", Arial, sans-serif;
+  font-size: 12px;
+}
+.ng-option.marked {
+  color: $medium-blue !important;
+  background: $extra-light-gray !important;
+}
+
+// table styles
+.table > tbody > tr > td {
+  vertical-align: middle;
+}
+th {
+  width: auto;
+}
+.section-header {
+  font-family: "proxima_novabold", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  color: $white;
+  margin: 0 !important;
+}
+.table th {
+  font-size: 12px;
+  font-family: "proxima_novasemibold", Arial, sans-serif;
+  line-height: 1;
+  color: $very-dark-gray;
+}
+.table th, .table td {
+  padding: 12px;
+}
+.thead-light, .thead-light th {
+  background: $almost-white;
+  height: 40px;
+  border-bottom: 1px solid $border-gray;
+}
+tbody {
+  border-bottom: 1px solid $border-gray;
+}
+.product-column {
+  width: 50%;
+}
+.content-padding-left {
+  padding-left: 41px !important;
+}
+.content-padding-right {
+  padding-right: 33px !important;
+}
+.quantity-column {
+  width: 24%;
+}
+.unit-price-column, .total-column {
+  width: 13%;
+}
+/********************************************/
+/* Interpolated Overrides         */
+/********************************************/
+.plan-and-pricing-link {
+  text-decoration: underline;
+  font-family: "proxima_novabold", Arial, sans-serif;
+  color: $medium-blue;
+}
+.silver-plan {
+  font-family: "proxima_novabold", Arial, sans-serif;
+}
+.custom-pagination {
+  .page-item {
+    outline: none !important;
+    &.active {
+      .page-link {
+        color: $white;
+        background-color: $medium-blue;
+        border-color: $medium-blue;
+      }
+    }
+    &:first-child {
+      .page-link {
+        border: none !important;
+        color: transparent;
+        background-image: url(assets/icons/number-arrow-left.svg) !important;
+      }
+    }
+    &:last-child {
+      .page-link {
+        border: none !important;
+        color: transparent;
+        background-image: url(assets/icons/number-arrow-right.svg) !important;
+      }
+    }
+
+    &.disabled {
+      &:first-child {
+        .page-link {
+          display: none;
+        }
+      }
+      .page-link {
+        border: none;
+        color: transparent;
+        background-image: url(assets/icons/number-circle-gray-more.svg);
+      }
+    }
+  }
+}
+.cert-ribbon {
+  background-image: url(assets/icons/badge.svg);
+}
+i.arrow {
+  content: url(assets/icons/dropdown-active-white.svg);
+}
+i.left-arrow {
+  content: url(assets/icons/dropdown-left-white.svg);
+}
+a.close {
+  .close-icon {
+    content: url(assets/icons/x-white.svg);
+  }
+}
+.header-wrapper {
+  background-image: url(assets/img/train/resourcebanner3x.png);
+}
+i.right-arrow {
+  content: url(assets/icons/dropdown-right.svg);
+}
+.section-wrapper {
+  background-image: url(assets/img/train/green-bg.svg);
+}
+.tooltip-span {
+  i {
+    content: url(assets/icons/faq-gray.svg);
+  }
+}
+.images-wrapper {
+  .image-area {
+    &.image1 {
+      background-image: url(assets/img/account/account_1.png);
+    }
+    &.image2 {
+      background-image: url(assets/img/account/account_2.png);
+    }
+    &.image3 {
+      background-image: url(assets/img/account/account_3.png);
+    }
+  }
+}
+i.check-black {
+  content: url(assets/icons/check-black.svg);
+}
+.btn-group {
+  &.show {
+    button {
+      i.arrow {
+        content: url(assets/icons/up-arrow-white.svg);
+      }
+    }
+  }
+}
+i {
+  &.arrow-up {
+    content: url(assets/icons/up-arrow-white.svg);
+  }
+}
+.table-row {
+  > div {
+    &.sortable {
+      &.sorting {
+        &:after {
+          background-image: url(assets/icons/dropdown-active.svg);
+        }
+      }
+    }
+  }
+}
+.hero-image {
+  background-image: url(assets/img/artboard.png);
+}
+
+@mixin label-checkbox-style($checked-bg-color, $border-color, $size) {
+  visibility: hidden;
+  position: absolute;
+  height: $size;
+  width: $size;
+
+  &:checked + span {
+    background-color: $checked-bg-color;
+    border-color: $border-color;
+  }
+
+  &:checked + span:after {
+    opacity: 1;
+  }
+
+  + span {
+    background-color: $white;
+    border: 1px solid $border-color;
+    border-radius: 25%;
+    cursor: pointer;
+    height: $size;
+    width: $size;
+    margin-bottom: 0;
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
+
+    &:after {
+      border: $size / 10 solid $white;
+      border-top: none;
+      border-right: none;
+      content: "";
+      height: $size / 4;
+      left: $size / 5;
+      opacity: 0;
+      position: absolute;
+      top: $size / 4;
+      transform: rotate(-45deg);
+      width: $size / 2;
+    }
+
+    + * {
+      flex: 1;
+      line-height: 1.4;
+    }
+  }
+}
+
+@mixin app-label-checkbox($checked-bg-color, $border-color, $size: 22px) {
+  position: relative;
+  margin: 0;
+  display: flex;
+  cursor: pointer;
+
+  input[type='checkbox'] {
+    @include label-checkbox-style($checked-bg-color, $border-color, $size);
+  }
+
+  input[type='radio'] {
+    @include label-checkbox-style($checked-bg-color, $border-color, $size);
+
+    + span {
+      border-radius: 50%;
+    }
+  }
+}
+
+.foxtrot-main-style {
+  font-family: "proxima_novaregular", Arial, sans-serif;
+  font-size: 14px;
+  line-height: normal;
+  color: $white;
+  max-width: 768px;
+  text-align: center;
+
+  .custom-checkbox {
+    @include app-label-checkbox($very-dark-gray, $dark-gray);
+  }
+  
+  .custom-radio-button {
+    @include app-label-checkbox($very-dark-gray, $dark-gray, 12px);
+  }
+
+  &.font-body-color {
+    color: $body-text-color;
+  }
+  .popover {
+    &.bs-popover-bottom {
+      left: unset !important;
+      right: 10px;
+  
+      .arrow {
+        left: unset !important;
+        right: 6px;
+      }
+  
+      .popover-body {
+        padding: 0;
+      }
+    }
+  }
+  
+}
+.foxtrot-popover {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  .popover {
+    &.bs-popover-bottom {
+      left: unset !important;
+      right: 10px;
+  
+      .arrow {
+        left: unset !important;
+        right: 6px;
+      }
+  
+      .popover-body {
+        padding: 0;
+      }
+    }
+  }
+
+}
+.foxtrot-tooltip {
+  position: absolute;
+  top: 100px;
+  left: 40px;
+  width: 194px;
+  text-align: right;
+
+ 
+}

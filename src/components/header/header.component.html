@@ -1,0 +1,30 @@
+<div [ngClass]="getHeaderClasses()">
+  <button (click)="onClickBack()" class="nav-btn back">
+    <img *ngIf="backIcon"
+     src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+      >
+    <strong *ngIf="backIcon" l10nTranslate>common_text_back</strong>
+  </button>
+  <div>
+    <h1 *ngIf="title" class="title">
+      <markdown l10nTranslate class="main-title">{{ title }}</markdown>
+    </h1>
+    <p *ngIf="subTitle" class="sub-title">
+      <markdown l10nTranslate>{{ subTitle }}</markdown>
+    </p>
+  </div>
+  <button class="nav-btn home">
+    <img *ngIf="contextMenu"
+      class="context-menu"
+      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+      >
+    <div *ngIf="stepsTotal && !contextMenu" class="steps-total">
+      {{ stepsComplete }}&nbsp;/&nbsp;{{ stepsTotal }}
+    </div>
+    <img *ngIf="!stepsTotal && !contextMenu && nextIcon"
+      (click)="onClickNext()"
+      class="home-icon"
+      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+      >
+  </button>
+</div>

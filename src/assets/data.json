@@ -1,0 +1,46 @@
+[
+  {
+    "profile": {
+      "avatar": "assets/img/teams/icon_susananderson@2x.png",
+      "firstName": "Susan",
+      "lastName": "Anderson",
+      "job": "Director of HR",
+      "meta": "Inclusive, Flexible, Risk Taking"
+    },
+    "motives": "HUB",
+    "status_invited": "2017-9-28",
+    "status_completed": "2017-9-30",
+    "status_reminders": [
+    ]
+  },
+  {
+    "profile": {
+      "avatar": "",
+      "firstName": "Leslie",
+      "lastName": "Bevins",
+      "job": "Director of Strategy",
+      "meta": ""
+    },
+    "motives": "",
+    "status_invited": "2017-9-28",
+    "status_completed": "",
+    "status_reminders": [
+    ]
+  },
+  {
+    "profile": {
+      "avatar": "",
+      "firstName": "Janice",
+      "lastName": "Lee",
+      "job": "Recruiting Coach",
+      "meta": ""
+    },
+    "motives": "",
+    "status_invited": "2017-9-28",
+    "status_completed": "",
+    "status_reminders": [
+      "2017-9-28",
+      "2017-9-28"
+    ]
+  }
+]

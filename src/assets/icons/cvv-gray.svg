@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Element/Icon/CVV-Gray</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Element/Icon/CVV-Gray">
+            <g id="Group" transform="translate(1.000000, 7.000000)">
+                <g id="Group-6" stroke-linecap="square">
+                    <g id="credit-card">
+                        <path d="M0.466666667,7.72727273 L41.5333333,7.72727273" id="Shape" stroke="#444444" stroke-width="0.527777778"></path>
+                        <path d="M38.7333333,29.5454545 L3.26666667,29.5454545 C1.68,29.5454545 0.466666667,28.3636364 0.466666667,26.8181818 L0.466666667,3.18181818 C0.466666667,1.63636364 1.68,0.454545455 3.26666667,0.454545455 L28.4666667,0.454545455 L38.7333333,0.454545455 C40.32,0.454545455 41.5333333,1.63636364 41.5333333,3.18181818 L41.5333333,26.8181818 C41.5333333,28.3636364 40.32,29.5454545 38.7333333,29.5454545 Z" id="Shape" stroke="#D6D6D6" stroke-width="1.05555556"></path>
+                    </g>
+                </g>
+                <rect id="Rectangle-3" fill="#D6D6D6" x="0" y="4" width="42" height="6"></rect>
+                <rect id="Rectangle-3-Copy" fill="#D6D6D6" x="4" y="17" width="23" height="2"></rect>
+                <rect id="Rectangle-3-Copy-2" fill="#D6D6D6" x="32" y="17" width="6" height="2"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

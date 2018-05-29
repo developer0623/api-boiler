@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Element/Icon/playbutton</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="Element/Icon/playbutton" stroke="#474747" stroke-width="0.8">
+            <g id="player-19" transform="translate(1.000000, 3.000000)">
+                <path d="M6,16 L14,16" id="Shape"></path>
+                <rect id="Rectangle-path" stroke-linejoin="round" x="0" y="0" width="20" height="13"></rect>
+                <polygon id="Shape" stroke-linejoin="round" points="8 4 12 6.5 8 9"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

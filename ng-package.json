@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "./lib",
+  "tsconfig": "./tsconfig.json",
+  "lib": {
+    "entryFile": "public_api.ts",
+    "cssUrl": "inline"
+  },
+  "whitelistedNonPeerDependencies": [
+    "."
+  ]
+  
+}

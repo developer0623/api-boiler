@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="27px" height="26px" viewBox="0 0 27 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="8" cy="8" r="8"></circle>
+        <filter x="-52.4%" y="-46.2%" width="204.9%" height="204.9%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="0.39" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="1" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.333984375 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Element/Card/Train-Susan" transform="translate(-217.000000, -118.000000)">
+            <g id="Icon" transform="translate(222.000000, 122.000000)">
+                <g id="Circle">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use stroke="#FFFFFF" stroke-width="0.78" fill="#308BC5" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <path d="M8.20297062,4.95233886 L8.81261389,6.92991695 C8.84113949,7.02207593 8.92305916,7.0943037 9.01540165,7.0943037 L10.986228,7.0943037 C11.1930386,7.0943037 11.2789812,7.3623693 11.1113018,7.48963646 L9.51807392,8.6953831 C9.4431028,8.75225104 9.41165149,8.85099281 9.44017709,8.9435175 L10.0492718,10.9062843 C10.1132715,11.1127277 9.88799244,11.2836973 9.72067883,11.1560644 L8.1254395,9.93898075 C8.05065123,9.88192996 7.94934877,9.8817471 7.8745605,9.93861504 L6.27932117,11.154053 C6.11200756,11.281503 5.88691132,11.1098021 5.95091106,10.9035415 L6.55982291,8.94132323 C6.58853136,8.8489814 6.55708006,8.74767967 6.48210893,8.69081172 L4.88869817,7.48963646 C4.72101884,7.3623693 4.80696135,7.0943037 5.01377195,7.0943037 L6.98459835,7.0943037 C7.07712369,7.0943037 7.15904337,7.02207593 7.18756897,6.92991695 L7.79702938,4.95709309 C7.86102913,4.75083252 8.13915373,4.74607829 8.20297062,4.95233886" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

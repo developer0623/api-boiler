@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Element/Icon/check-black</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Element/Icon/check-black" fill="#4A4A4A" fill-rule="nonzero">
+            <g id="check-circle-08" transform="translate(6.000000, 7.000000)">
+                <path d="M10.5387097,0.603225806 L3.44193548,7.7 C3.37096774,7.77096774 3.3,7.80645161 3.19354839,7.80645161 C3.08709677,7.80645161 3.01612903,7.77096774 2.94516129,7.7 L0.106451613,4.86129032 C-0.035483871,4.71935484 -0.035483871,4.50645161 0.106451613,4.36451613 C0.248387097,4.22258065 0.461290323,4.22258065 0.603225806,4.36451613 L3.19354839,6.95483871 L10.0419355,0.106451613 C10.183871,-0.035483871 10.3967742,-0.035483871 10.5387097,0.106451613 C10.6806452,0.248387097 10.6806452,0.461290323 10.5387097,0.603225806 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,33 @@
+@import '../../assets/moon-lite-components/styles/variables';
+$height: 20%;
+@mixin getBarHeight($i) {
+  height: $height * $i;
+}
+
+.train-rating {
+  width: 37px;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+  &__bar {
+    width: 5px;
+    background-color: $white;
+    &.bg_gray {
+      background-color: $very-dark-gray;
+    }
+    &--deactive {
+      background-color: transparent !important;
+    }
+  }
+
+  $class-slug: "&__bar";
+  $stop-loop:  5;
+
+  @for $i from 1 through $stop-loop {
+    #{$class-slug}--#{$i} {
+      @include getBarHeight($i);
+    }
+  }
+}

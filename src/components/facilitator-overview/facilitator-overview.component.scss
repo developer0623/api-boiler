@@ -1,0 +1,283 @@
+@import '../assets/moon-lite-components/styles/variables';
+@import '../assets/moon-lite-components/styles/mixins';
+
+$left-panel-width: 171px;
+$middle-panel-width: 430px;
+$right-panel-width: 140px;
+
+.color {
+  @include pspPersonalityColors;
+}
+
+.overview-component {
+  font-family: "proxima_novaregular", Arial, sans-serif; 
+  font-size: $base-font-size;
+  line-height: normal;
+  color: $white;
+  text-align: center;
+  .blue-score-underline-text {
+    a {
+      font-family: "proxima_novamedium", Arial, sans-serif;
+      font-size: 40px;
+      line-height: 37px;
+      color: $heavy-blue;
+      border-bottom: 2px solid $heavy-blue;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 30px;  
+    }
+
+    div {
+      font-size: 11px;
+      color: $medium-gray;
+      margin-top: 5px;
+    }
+  }
+
+  .top-bar{
+    background-color: $medium-blue;
+    height: 50px;
+    
+    .text-train-title {
+      font-family: "proxima_novabold", Arial, sans-serif;
+      font-size: 20px;
+      padding: 10px 20px;
+    }
+  }
+
+  .inner-content {
+    height: 237px;
+
+    .left-content-holder {
+      background-color: $almost-white;
+      min-width: $left-panel-width;
+      padding: 29px 35px 11px 32px;
+
+      .user-avatar {
+        width: 86px;
+      }
+
+      .user-name {
+        font-family: "proxima_novabold", Arial, sans-serif;
+        color: $very-dark-gray;
+        margin-top: 8px;
+      }
+
+      .user-job-title {
+        color: $very-dark-gray;
+        font-size: 12px;
+        margin-bottom: 5px;
+      }
+
+      .user-motives, {
+        font-family: "proxima_novasemibold", Arial, sans-serif;
+        font-size: 12px;
+        color: $medium-gray;
+      }
+
+      .user-conflict {
+        font-family: "proxima_novasemibold", Arial, sans-serif;
+        font-size: 12px;
+        color: $medium-gray;
+      }
+
+      .sdi-date {
+        font-size: 10px;
+        color: $medium-gray;
+        margin-top: 27px;
+        text-decoration: underline;
+      }
+    }
+
+    .middle-content-holder {
+      min-width: $middle-panel-width;
+      flex: 1;
+      
+      .summary-section {
+        .red-facilitator-banner {
+          background-image: url('/assets/moon-lite-components/img/overview/train-card-red-ribbon.svg');
+          background-size: cover;
+          padding: 14px 9px 45px 10px;
+
+          .text-premier {
+            font-family: "proxima_novabold", Arial, sans-serif;
+            letter-spacing: 4.7px;        
+          }
+
+          .text-facilitator {
+            font-size: 12px;
+            letter-spacing: 1.6px;
+          }
+
+          .line-facilitator{
+            border: solid 1px;
+            margin: 8px 10px 0 11px;
+          }
+
+          .csa-certified {
+            font-size: 12px;
+            margin-top: 14px;         
+          }
+        }
+
+        .text-facilitator-id {
+          font-family: "proxima_novabold", Arial, sans-serif;
+          font-size: 12px;
+          letter-spacing: 0.7px;
+          color: $medium-gray;
+
+          .facilitator-id {
+            font-family: "proxima_novaregular", Arial, sans-serif; 
+          }
+        }
+      }
+
+      .rating-section {
+        padding: 20px 18px 34px;
+        color: $very-dark-gray;
+
+        .text-facilitator-rating {
+          font-family: "proxima_novabold", Arial, sans-serif;
+        }
+
+        .facilitator-rating {
+          margin-top: 35px;
+  
+          .facilitator-rating-score {
+            font-family: "proxima_novaregular", Arial, sans-serif; 
+            font-size: 48px;
+            color: $heavy-blue;
+          }
+  
+          .text-out-of-5 {
+            font-family: "proxima_novamedium", Arial, sans-serif;
+            font-size: 10px;
+          }  
+        }
+      }
+
+      .trained-section {
+        padding: 20px 47px 34px 18px;
+
+        .text-trained {
+          font-family: "proxima_novabold", Arial, sans-serif;
+          color: $very-dark-gray;
+        }
+      }
+    }
+
+    .right-content-holder {
+      width: $right-panel-width;
+      padding: 20px 33px 34px;
+      border-left: solid 2px $border-gray;
+
+      .text-available {
+        font-family: "proxima_novabold", Arial, sans-serif;
+        color: $very-dark-gray;
+      }
+    }
+  }
+
+  .bottom-bar {
+    background-color: $body-text-color;
+    height: 61px;
+
+    .re-gen-div {
+      min-width: $left-panel-width;
+      padding-left: 46px;
+      padding-right: 46px;
+      border-right: solid 2px $black;
+    }
+
+    .platform-key-div {
+      min-width: $middle-panel-width;
+      flex: 1;
+      font-size: 10px;
+      padding: 7px 25px 11px 16px;
+
+      .text-platform-key {
+        font-family: "proxima_novabold", Arial, sans-serif;
+        letter-spacing: 0.6px;
+        padding-bottom: 3px;
+        color: $extra-light-gray;
+      }
+
+      .platform-key {
+        border-radius: 2px;
+        padding: 7px 60px 8px 8px;
+        margin-right: 29px;
+        background-color: $black;
+      }
+
+      .btn-copy {
+        font-family: "proxima_novamedium", Arial, sans-serif;
+        font-size: 11px;
+        letter-spacing: 0.5px;
+        border-radius: 3px;
+        background-color: $medium-blue;
+        border: solid 1px $medium-blue;
+        padding: 4px 28px 3px;
+        color: $white;
+      }
+    }
+
+    .text-transactions-div {
+      width: $right-panel-width;
+      padding: 24px 15px;
+      border-left: solid 2px $black;
+
+      .text-transactions {
+        font-family: "proxima_novabold", Arial, sans-serif;
+        font-size: 12px;
+        line-height: 1;
+        letter-spacing: 1.3px;
+        color: $white;
+        border-bottom: solid 1px $medium-blue;
+        text-decoration: none;
+        padding-bottom: 2px;
+      }
+    }
+  }
+
+  &.is_normal {
+
+    .middle-content-holder {
+      background-color: $background-second-color;
+      .rating-section {
+        color: $white;
+        .facilitator-rating-score {
+          color: $white !important;
+        }
+      }
+
+      .text-trained {
+        color: $white !important;
+      }
+
+      .text-facilitator-id {
+        color: $white !important;
+      }
+    }
+
+    .right-content-holder {
+      background-color: $background-second-color;
+      border-color: $medium-blue !important;
+      .text-available {
+        color: $white;
+      }
+    }
+    .blue-score-underline-text {
+      a {
+        color: $white;
+        border-color: $white;
+      }
+
+      div {
+        color: $white;
+      }
+    }
+
+    
+
+  }
+}

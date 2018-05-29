@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Element/Icon/number-circle-blue</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Element/Icon/number-circle-blue" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="check-circle-08" transform="translate(1.000000, 1.000000)" fill="#308BC5" fill-rule="nonzero">
+            <path d="M15,0 C6.72580645,0 0,6.72580645 0,15 C0,23.2741935 6.72580645,30 15,30 C23.2741935,30 30,23.2741935 30,15 C30,6.72580645 23.2741935,0 15,0 Z" id="Shape"></path>
+        </g>
+        <text id="1" font-family="ProximaNova-Regular, Proxima Nova" font-size="14" font-weight="normal" fill="#FFFFFF">
+            <tspan x="13.627" y="13">1</tspan>
+        </text>
+    </g>
+</svg>

@@ -1,0 +1,107 @@
+<div class="overview-component" [ngClass]="{'is_normal': !orgAdmin}">
+  <div class="d-flex inner-content">
+    <div class="left-content-holder">
+      <img class="user-avatar" [src]="user.profileImages.avatarUrl"/>
+      <div class="user-name">{{ user.firstName }} {{ user.lastName }}</div>
+      <div class="user-job-title">{{ user.jobTitle }}</div>
+      <div class="user-motives">
+        <span l10nTranslate>navigation_motives</span>:
+        <span [innerHtml]="user.assessments.default.results.motivationalValueSystem.color | appMotivesHtml"></span>
+      </div>
+      <div class="user-conflict">
+        <span l10nTranslate>navigation_conflict</span>:
+        <span [innerHtml]="user.assessments.default.results.conflictSequence.color | appConflict "></span>
+      </div>
+      <div class="sdi-date" *ngIf="orgAdmin">
+        <span l10nTranslate>train_text_sdi2</span>
+        <span>{{ user.assessments.default.createdAt | date:'d MMMM y' }}</span>
+      </div>
+    </div>
+    <div class="d-flex middle-content-holder">
+      <div class="summary-section">
+        <div class="red-facilitator-banner">
+          <div class="text-uppercase">
+            <div class="text-premier" l10nTranslate>train_text_premier</div>
+            <div class="text-facilitator" l10nTranslate>train_text_facilitator</div>
+          </div>
+          <div class="line-facilitator"></div>
+          <div class="csa-certified">
+            <img src="assets/moon-lite-components/icons/train-card-bluestar-circle.svg"/>
+            <div l10nTranslate>train_csa_certified</div>
+          </div>
+          <div class="csa-certified">
+            <img src="assets/moon-lite-components/icons/train-card-bluestar-circle.svg"/>
+            <div l10nTranslate>train_csr_certified</div>
+          </div>
+        </div>
+        <div class="text-uppercase text-facilitator-id">
+          <div l10nTranslate>train_facilitator_id</div>
+          <div class="facilitator-id">{{ facilitatorId }}</div>
+        </div>
+      </div>
+      <div class="text-uppercase rating-section">
+        <div class="text-facilitator-rating" l10nTranslate>train_facilitator_rating</div>
+        <div class="d-flex align-items-center facilitator-rating">
+          <div class="facilitator-rating-score">{{ facilitatorRating }}</div>
+          <div class="text-left">
+            <app-train-rating [rate]='facilitatorRating' [state]="orgAdmin"></app-train-rating>
+            <div class="text-out-of-5" l10nTranslate>train_out_of_5</div>
+          </div>
+        </div>
+        <div class="blue-score-underline-text evaluations">
+          <a (click)="onClickHerf()" class="evaluations-score">{{ facilitatorEvaluations }}</a>
+          <div class="text-evaluations" l10nTranslate>train_text_evaluations</div>
+        </div>
+      </div>
+      <div class="text-uppercase trained-section">
+        <div class="text-trained" l10nTranslate>train_text_trained</div>
+        <div class="blue-score-underline-text">
+          <a (click)="onClickHerf()" class="evaluations-score classes-number">{{ trainedClasses }}</a>
+          <div class="text-evaluations text-classes" l10nTranslate>navigation_classes</div>
+        </div>
+        <div class="blue-score-underline-text">
+          <a (click)="onClickHerf()" class="evaluations-score learners-number">{{ trainedLearners }}</a>
+          <div class="text-evaluations text-learners" l10nTranslate>train_text_learners</div>
+        </div>
+      </div>        
+    </div>
+    <div class="text-uppercase right-content-holder">
+      <div class="text-available" l10nTranslate>train_text_available</div>
+      <div class="blue-score-underline-text">
+        <a (click)="onClickHerf()" class="evaluations-score toolkits-number">{{ orgToolkits }}</a>
+        <div class="text-evaluations text-toolkits" l10nTranslate>train_toolkits_text</div>
+      </div>
+      <div class="blue-score-underline-text">
+        <a (click)="onClickHerf()" class="evaluations-score credits-number">{{ orgSdiCredits }}</a>
+        <div class="text-evaluations text-credits" l10nTranslate>inventory_credits_text</div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex text-uppercase rounded-bottom bottom-bar" *ngIf="orgAdmin">
+    <div class="d-flex align-items-center re-gen-div">
+      <app-icon-button
+        [iconUrl]="'assets/moon-lite-components/icons/train-re-gen.svg'"
+        [content]="'train_re_gen_text'"
+        (onclick)="reGenerate()">
+      </app-icon-button>
+    </div>
+    <div class="text-left platform-key-div">
+      <div class="text-platform-key" l10nTranslate>train_platform_key</div>
+      <div class="d-flex align-items-center">
+        <div class="platform-key">{{ platformKey }}</div>
+        <button
+          class="btn btn-copy text-uppercase"
+          ngxClipboard 
+          [cbContent]="platformKey" 
+          (cbOnSuccess)="copiedToClipboardAlert()" 
+          l10nTranslate>
+          common_copy_button
+        </button>
+      </div>
+    </div>
+    <div class="text-transactions-div">
+      <a (click)="onShowTranaction()" class="text-transactions" l10nTranslate>navigation_transactions</a>
+    </div>
+  </div>
+</div>
+<simple-notifications [options]="options"></simple-notifications>
